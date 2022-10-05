@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Actualizar";
+}
+
+<h1>Actualizar</h1>
+
+<center>
+    
+        <nav class="navbar navbar-expand-sm bg-success navbar-light ">
+            <b>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Estudiante/Actualizar">ACTUAlIZAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
+
+
+            </ul>
+            </b>
+        </nav>
+    <p>
+
+</center>
+
+<br />
+
+<div style="text-align:right">
+    <a href="/Administrador/login" id="regresar">Cerrar sesion</a>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col">
+
+        <select name="TIPO DE DOCUMENTO" id="DOUMENTO ENTIDAD">
+            <option value="r">DOUMENTO ENTIDAD</option>
+            <option value="r">CEDULA DE CIUDADANIA</option>
+            <option value="a">CEDULA EXTRANJERIA</option>
+            <option value="v">TARJETA DE ENTIDAD</option>
+            <option value="v">PASAPORTE</option>
+            <option value="v">NIT</option>
+        </select>
+    </div>
+
+
+
+</div>
+
+<br />
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col">
+            <input type="text" class="form-control" id="Document" placeholder="DOCUMENTO" name="email">
+        </div>
+
+        <div class="col">
+            <input type="text" class="form-control" id="PRIMER_NOMBRE" placeholder="PRIMER NOMBRE" name="email">
+        </div>
+
+        <div class="col">
+            <input type="text" class="form-control" id="Segundo_Nombre" placeholder="SEGUNDO NOMBRE" name="email">
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" id="Primer_Apellido" placeholder="PRIMER APELLIDO" name="email">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" id="SEGUNDO_APELLIDO" placeholder="SEGUNDO APELLIDO" name="email">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" id="email" placeholder="CORREO ELECTRONICO" name="email">
+        </div>
+
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+
+        <div class="col">
+            <select name="GENERO" id="GENERO" style="margin-left:inherit">
+                <option value="r">GENERO</option>
+                <option value="r">MASCULINO</option>
+                <option value="a">FEMENINO</option>
+                <option value="v">OTRO </option>
+
+            </select>
+        </div>
+
+        <div class="col">
+            <select name="ESPECIALIDAD" id="ESPECIALIDAD">
+                <option value="r">PROGRAMAS</option>
+                <option value="r">ESPECIALIZACION SI </option>
+                <option value="a">MAESTRIA EN MEDIO AMBIENTE</option>
+
+            </select>
+        </div>
+    </div>
+
+
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<div>
+<center> <input type="button" id="btnCrear_Usuario" value="ACTUALIZAR USUARIO" class="btn btn-success" /></center>
+<br />
+<center> <input type="button" id="btnCrear_Usuario" value="ENVIAR CERTIFICADO" class="btn btn-success" /></center>
+</div>

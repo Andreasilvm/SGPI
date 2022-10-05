@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "ProgramarAsignacion";
+}
+
+<h1>ProgramarAsignacion</h1>
+<center>
+    <p>
+        <nav class="navbar navbar-expand-sm bg-success navbar-light ">
+            <b>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/BuscarCoordinador">BUSCAR COORDINADOR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/ProgramarAsignacion">PROGRAMAR ASIGNATURA</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/Homologacion">HOMOLOGACION</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/Entrevistas">ENTREVISTAS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/Reportes">REPORTES</a>
+                </li>
+            </ul>
+            </b>
+        </nav>
+    <p>
+
+</center>
+
+<br>
+<div style="text-align:right">
+    <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
+</div>
+
+<div class="container-fluid cew-9">
+    <div class="row">
+        <div class="col">
+            <b><label for="periodoacademicoCtxt">PERIODO ACADEMICO </label></b>
+            <div class="form-group">
+                <input type="number" placeholder="2022-2" class="form-control col-sm-1" required />
+            </div>
+        </div>
+        <div class="col">
+            <b><label for="PROGRAMA">PROGRAMA</label></b>
+            <br>
+            <select name="programa" id="programa">
+                <option value="ingenieria">Ingenieria de Software</option>
+                <option value="maestria">Maestria en Gestion TI</option>
+                <option value="si">Especializacion SI</option>
+                <option value="medioambiente">Maestria en Medio Ambiente</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>FECHA</th>
+                <th>SALA-AULA</th>
+                <th> ASIGNATURA</th>
+                <th>CODIGO ASIGNATURA</th>
+                <th>OPCION</th>
+            </tr>
+        </thead>
+
+        <tr class="text-center">
+            <td><input type="date" class="form-control col-sm-1" required /></td>
+            <td><input type="number" placeholder="5-206" class="form-control col-sm-1" required /></td>
+            <td><input type="text" placeholder="Construccion de Software" class="form-control col-sm-1" required /></td>
+            <td><input type="number" placeholder="990406" class="form-control col-sm-1" required /></td>
+            <td><input type="button" id="btnAgregar" value="AGREGAR" class="btn btn-success" /></td>
+        </tr>
+
+
+    </table>
+</div>
+<br>

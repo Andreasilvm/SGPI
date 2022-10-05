@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "EditarUsuario";
+}
+<h1>MODIFICAR USUARIO</h1>
+
+
+<center>
+    <p>
+        <nav class="navbar navbar-expand-sm bg-success navbar-light ">
+            <b>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/CrearUsuario">CREAR USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/BuscarUsuario">BUSCAR USUARIO</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/EliminarUsuario">ELIMINAR USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/EditarUsuario">MODIFICAR USUARIO</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/Reporte">REPORTE</a>
+                </li>
+            </ul>
+            </b>
+
+        </nav>
+</center>
+
+<div style="text-align:right">
+    <a href="/Administrador/login" id="regresar">Cerrar sesion</a>
+</div>
+
+<br>
+<div class="row">
+    <div class="col">
+
+        <select name="TIPO DE DOCUMENTO" id="DOCUMENTO ENTIDAD">
+            <option value="r">DOCUMENTO ENTIDAD</option>
+            <option value="r">CEDULA DE CIUDADANIA</option>
+            <option value="a">CEDULA EXTRANJERIA</option>
+            <option value="v">TARJETA DE ENTIDAD</option>
+            <option value="v">PASAPORTE</option>
+            <option value="v">NIT</option>
+        </select>
+    </div>
+
+
+
+</div>
+
+<br />
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col">
+            <input type="text" class="form-control" id="Document" placeholder="1035581599" name="email">
+        </div>
+
+        <div class="col">
+            <input type="text" class="form-control" id="PRIMER_NOMBRE" placeholder="Yuli" name="email">
+        </div>
+
+        <div class="col">
+            <input type="text" class="form-control" id="Segundo_Nombre" placeholder="Andrea" name="email">
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" id="Primer_Apellido" placeholder="Silva" name="email">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" id="SEGUNDO_APELLIDO" placeholder="Muñoz" name="email">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" id="email" placeholder="yuli.silva@correo.tdea.edu.co" name="email">
+        </div>
+
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+
+        <div class="col">
+            <select name="GENERO" id="GENERO" style="margin-left:inherit">
+                <option value="r">GENERO</option>
+                <option value="r">MASCULINO</option>
+                <option value="a">FEMENINO</option>
+                <option value="v">OTRO </option>
+
+            </select>
+        </div>
+
+
+        <div class="col">
+            <select name="ROL" id="ROL">
+                <option value="r">ROL</option>
+                <option value="r">ADMINISTRADOR</option>
+                <option value="a">ESTUDIANTE</option>
+
+            </select>
+        </div>
+
+
+        <div class="col">
+            <select name="ESPECIALIDAD" id="ESPECIALIDAD">
+                <option value="r">PROGRAMAS</option>
+                <option value="r">ESPECIALIZACION SI </option>
+                <option value="a">MAESTRIA EN MEDIO AMBIENTE</option>
+
+            </select>
+        </div>
+    </div>
+
+
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<center> <input type="button" id="btnCrear_Usuario" value="MODIFICAR USUARIO" class="btn btn-success" /></center>
