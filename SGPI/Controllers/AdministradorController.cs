@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SGPI.Models;
 
 namespace SGPI.Controllers
@@ -30,19 +31,67 @@ namespace SGPI.Controllers
             //context.Add(usr);
             //context.SaveChanges();
 
-            /// QUERY
-            TblUsuario usuario = new TblUsuario();
-            usuario = context.TblUsuarios
-            .Single(b =>b.NumeroDocumento == "123456789");
+            ///// QUERY
+            //TblUsuario usuario = new TblUsuario();
+            //usuario = context.TblUsuarios
+            //.Single(b => b.NumeroDocumento == "123456789");
 
-            List<TblUsuario> usuarios = new List<TblUsuario>();
-            usuarios = context.TblUsuarios.ToList();
+            //List<TblUsuario> usuarios = new List<TblUsuario>();
+            //usuarios = context.TblUsuarios.ToList();
 
             /// UPDATE
-            /// DALATE
+            //var usr = context.TblUsuarios.Where(cursor => cursor.Idusuario == 1)
+            //    .FirstOrDefault();
+            //if (usr != null)
+            //{
+            //    usr.SegundoNombre = "Tronchatoro";
+            //    context.TblUsuarios.Update(usr);
+            //    context.SaveChanges();
+            //}
 
+            //    /// DELATE
+            //    var usuarioEliminar = context.TblUsuarios.Where(cursor => cursor.Idusuario == 1)
+            //        .FirstOrDefault();
+            //    context.TblUsuarios.Remove(usuarioEliminar);
             return View();
         }
+
+        public IActionResult Login(TblUsuario user)
+        {
+            string numerodoc = user.NumeroDocumento;
+            string password = user.VcPassword;
+
+            var usuarioLogin = context.TblUsuarios.Where(consulta => consulta.NumeroDocumento == numerodoc && consulta.VcPassword == password).FirstOrDefault();
+            if (usuarioLogin != null)
+            {
+                switch (usuarioLogin.Idrol)
+                {
+                    case 1:
+
+                        CrearUsuario();
+                        break;
+                    case 2:
+                        CoordinadorController Coordinador = new CoordinadorController();
+                        Coordinador.BuscarCoordinador();
+                        break;
+
+                    case 3:
+                        EstudianteController Estudiante = new EstudianteController();
+                        Estudiante.Actualizar();
+                        break;
+                    default:
+                        Login();
+                        break;
+                }
+            }
+            else
+            {
+                return ViewBag.mensaje = "Usuario no existe o usuario/contraseña no no valida";
+
+            }
+            return View();
+        }
+
 
         public IActionResult OlvidarContrasena()
         {
