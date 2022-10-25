@@ -1,10 +1,11 @@
-﻿
+﻿@model SGPI.Models.TblUsuario
+
 @{
     ViewData["Title"] = "Login";
-
-    
+    Layout= "_LayoutSGPI";
 }
-<center>
+@if (ViewBag.mensaje!=null)´{}
+ <center>
     <b>
         <font zize=18 color="green" face="calibri"> SISTEMA DE GESTION DE POSGRADOS</font>
     </b>
@@ -20,7 +21,7 @@
             </b> 
             
             <br>
-            <input type="text" class ="form-control col-sm-2" id="usuariotxt" required />
+            <input asp-for="NumeroDocumento" type="text" class ="form-control col-sm-2" id="usuariotxt" required />
             <br>
             <br>
         </div>
@@ -28,7 +29,7 @@
         <div class="form-group">
             <b><label for="passwordtxt">Contraseña</label></b>
             <br>
-            <input type="password" class ="form-control col-sm-2" id="passwordtxt" required />
+            <input asp-for="VcPassword" type="password" class ="form-control col-sm-2" id="passwordtxt" required />
             <br>
         <br>
         </div>
