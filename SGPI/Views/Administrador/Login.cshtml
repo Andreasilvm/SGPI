@@ -2,26 +2,30 @@
 
 @{
     ViewData["Title"] = "Login";
-    Layout= "_LayoutSGPI";
+    Layout = "_LayoutSGPI";
 }
-@if (ViewBag.mensaje!=null)´{}
- <center>
+@if (ViewBag.mensaje != null)
+{
+
+    <h1>@ViewBag.mensaje</h1>
+}
+<center>
     <b>
-        <font zize=18 color="green" face="calibri"> SISTEMA DE GESTION DE POSGRADOS</font>
+        <font zize=20 color="back" face="calibri"> SISTEMA DE GESTION DE POSGRADOS</font>
     </b>
 </center>
 
-    <center>
-    <form>
-        <br> 
+<center>
+    <form method="post">
+        <br>
         <br>
         <div class="form-group">
             <b>
-               <label for="usuariotxt">Usuario</label>
-            </b> 
-            
+                <label for="usuariotxt">Usuario</label>
+            </b>
+
             <br>
-            <input asp-for="NumeroDocumento" type="text" class ="form-control col-sm-2" id="usuariotxt" required />
+            <input asp-for="NumeroDocumento" type="text" class="form-control col-sm-2" id="usuariotxt" required />
             <br>
             <br>
         </div>
@@ -29,15 +33,15 @@
         <div class="form-group">
             <b><label for="passwordtxt">Contraseña</label></b>
             <br>
-            <input asp-for="VcPassword" type="password" class ="form-control col-sm-2" id="passwordtxt" required />
+            <input asp-for="VcPassword" type="password" class="form-control col-sm-2" id="passwordtxt" required />
             <br>
-        <br>
+            <br>
         </div>
 
         <a href="/Administrador/OlvidarContrasena" id="recuperarPass">¿Olvidaste la contraseña?</a>
         <br>
         <br>
-         <a href="/Administrador/CrearUsuario"><input id="ingresarbtn" type="button" value="Ingresar"></a>
+        <a href="/Administrador/CrearUsuario"><input id="ingresarbtn" type="button" value="Ingresar"></a>
 
         <div class="form-check mb-2 mr-sm-2">
             <label class="form-check-label">

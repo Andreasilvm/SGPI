@@ -8,6 +8,9 @@ builder.Services.AddDbContext<SGPI_BDContext>(options =>
 
 });
 
+
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

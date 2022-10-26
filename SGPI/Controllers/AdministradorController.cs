@@ -55,34 +55,39 @@ namespace SGPI.Controllers
             //    context.TblUsuarios.Remove(usuarioEliminar);
             return View();
         }
-
+        [HttpPost]
         public IActionResult Login(TblUsuario user)
         {
             string numerodoc = user.NumeroDocumento;
             string password = user.VcPassword;
 
-            var usuarioLogin = context.TblUsuarios.Where(consulta => consulta.NumeroDocumento == numerodoc && consulta.VcPassword == password).FirstOrDefault();
+            var usuarioLogin = context.TblUsuarios
+               .Where(consulta => consulta.NumeroDocumento == numerodoc && consulta.VcPassword == password).FirstOrDefault();
             if (usuarioLogin != null)
             {
 
-                
+
 
                 switch (usuarioLogin.Idrol)
                 {
                     case 1:
-
+                        CrearUsuario();
                         return View("CrearUsuario");
-                        break;
+                       
                     case 2:
+                        CoordinadorController Coordinador = new CoordinadorController();
+                        Coordinador.BuscarCoordinador();
                         return Redirect("Coordinador/BuscarCoordinador");
-                        break;
+                        
 
                     case 3:
+                        EstudianteController Estudiante = new EstudianteController();
+                        Estudiante.Actualizar();
                         return Redirect("Estudiante/Actualizar");
-                        break;
+                       
                     default:
-                        Login();
-                        break;
+                        return View();
+                       
                 }
             }
             else
@@ -91,6 +96,9 @@ namespace SGPI.Controllers
 
             }
             return View();
+
+
+
         }
         
 
