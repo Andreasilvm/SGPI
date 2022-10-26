@@ -108,6 +108,7 @@ namespace SGPI.Controllers
         }
         public IActionResult CrearUsuario()
         {
+
             return View();
         }
 
