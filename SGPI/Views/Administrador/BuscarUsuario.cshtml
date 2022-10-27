@@ -42,16 +42,43 @@
 <html lang="en">
 <body>
 
+
     <div class="container mt-3">
-        
+        <form method="post">
+
+        <label></label>
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
-    </div>
+
+        
+    
     <br />
     <div>
-        <center> <input asp-for="NumeroDocumento"  type="button" id="btnCrear_Usuario" value="BUSCAR USUARIO" class="btn btn-success" /></center>
+        <center> <input asp-for="NumeroDocumento"  type="submit" id="btnBuscar_Usuario" value="BUSCAR USUARIO" class="btn btn-success" /></center>
+        @if(Model != null)
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model=>model.PrimerNombre)</th>
+                        <th>@Html.DisplayNameFor(model=>model.SegundoNombre)</th>
+                        <th>@Html.DisplayNameFor(model=>model.PrimerApellido)</th>
+                        <th>@Html.DisplayNameFor(model=>model.SegundoApellido)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>@Html.DisplayFor(modelitem=>modelitem.PrimerNombre)</td>
+                    <td>@Html.DisplayFor(modelitem=>modelitem.SegundoNombre)</td>
+                    <td>@Html.DisplayFor(modelitem=>modelitem.PrimerApellido)</td>
+                    <td>@Html.DisplayFor(modelitem=>modelitem.SegundoApellido)</td>
+                    <td>@Html.DisplayFor(modelitem=>modelitem.Idgenero)</td>
+                </tbody>
+            </table>
+        }
+        </form>
+        </div>
     </div>
     <br>
-    <table class="table table-bordered">
+  @*  <table class="table table-bordered">
         <thead>
             <tr>
                 <th>PRIMER NOMBRE</th>
@@ -116,7 +143,7 @@
 
 
         </tbody>
-    </table>
+    </table>*@
 
     <script>
         $(document).ready(function () {

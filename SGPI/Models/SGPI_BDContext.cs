@@ -34,7 +34,9 @@ namespace SGPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=LAPTOP-K77E1CI5\\SQL;Database=SGPI_BD;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-0R9U54R\\SQLEXPRESS;Database=SGPI_BD;Trusted_Connection=True;");
+                //("Server=LAPTOP-K77E1CI5\\SQL;Database=SGPI_BD;Trusted_Connection=True;");
+                // universidad DESKTOP-0R9U54R\\SQLEXPRESS;
             }
         }
 

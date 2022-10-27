@@ -69,7 +69,7 @@ namespace SGPI.Controllers
                 {
                     case 1:
                         CrearUsuario();
-                        return View("CrearUsuario");
+                        return Redirect("/Administrador/CrearUsuario");
 
                     case 2:
                         CoordinadorController Coordinador = new CoordinadorController();
@@ -110,19 +110,44 @@ namespace SGPI.Controllers
             return View();
         }
 
-        public IActionResult BuscarUsuario()
+        /// modificando 27/10/2022
+        [HttpPost]
+        public IActionResult CrearUsuario(TblUsuario Usuario)
         {
+            context.TblUsuarios.Add(Usuario);
+            context.SaveChanges();
 
-            //TblUsuario usuario = new TblUsuario();
-            //string NumeroDocumento;
-            //usuario = context.TblUsuarios
-            //.Single(b => b.NumeroDocumento == "NumeroDocumento");
-
-            //List<TblUsuario> usuarios = new List<TblUsuario>();
-            //usuarios = context.TblUsuarios.ToList();
+            ViewBag.mensaje = "usuario creado Exitosamente";
+            ViewBag.TblPrograma = context.TblProgramas.ToList();
+            ViewBag.TblGenero = context.TblGeneros.ToList();
+            ViewBag.TblRol = context.TblRols.ToList();
+            ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
 
 
             return View();
+        }
+
+
+        public IActionResult BuscarUsuario()
+        {
+            TblUsuario usuario = new TblUsuario();
+            return View(usuario);
+        }
+
+        [HttpPost]
+        public IActionResult BuscarUsuario(TblUsuario usuario)
+        {            
+            String numeroDoc =usuario.NumeroDocumento;
+            var user=context.TblUsuarios.
+                Where(consulta => consulta.NumeroDocumento == numeroDoc).FirstOrDefault();
+            if(user != null) {
+                return View(user);
+            }
+            else
+            {
+                return View();
+            }
+                        
         }
 
         public IActionResult EliminarUsuario()
@@ -145,7 +170,7 @@ namespace SGPI.Controllers
 
         public IActionResult Reporte()
         {
-            
+
             return View();
         }
 
