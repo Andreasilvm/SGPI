@@ -1,5 +1,7 @@
-﻿@{
+﻿@model SGPI.Models.TblUsuario
+@{
     ViewData["Title"] = "BuscarUsuario";
+    Layout = "_LayoutSGPI";
 }
 
 
@@ -41,12 +43,12 @@
 <body>
 
     <div class="container mt-3">
-        <h2>Buscar Usuario</h2>
+        
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
     </div>
     <br />
     <div>
-        <center> <input type="button" id="btnCrear_Usuario" value="BUSCAR USUARIO" class="btn btn-success" /></center>
+        <center> <input asp-for="NumeroDocumento"  type="button" id="btnCrear_Usuario" value="BUSCAR USUARIO" class="btn btn-success" /></center>
     </div>
     <br>
     <table class="table table-bordered">

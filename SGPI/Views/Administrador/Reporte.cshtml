@@ -1,8 +1,12 @@
-﻿@{
+﻿@model SGPI.Models.TblUsuario
+
+@{
     ViewData["Title"] = "Informe";
+    Layout = "_LayoutSGPI";
 }
 
-<h1> REPORTE  </h1>
+
+
 
 <center>
 
@@ -41,15 +45,9 @@
     <form>
         <div class="row">
             <div class="col">
-
-                <select name="TIPO DE DOCUMENTO" id="DOCUMENTO ENTIDAD">
-                    <option value="r">DOCUMENTO ENTIDAD</option>
-                    <option value="r">CEDULA DE CIUDADANIA</option>
-                    <option value="a">CEDULA EXTRANJERIA</option>
-                    <option value="v">TARJETA DE ENTIDAD</option>
-                    <option value="v">PASAPORTE</option>
-                    <option value="v">NIT</option>
-                </select>
+            @*    @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"), 
+                new{@class="form-control dropdown"})*@
+               
             </div>
         </div>
 
@@ -59,7 +57,7 @@
 
         <div class="input-group">
             <br>
-            <input type="text" placeholder="1035581599" id="busquedatxt" class="form-control" required />
+            <input asp-for="NumeroDocumento" type="text" placeholder="NumeroDocumento" id="busquedatxt" class="form-control" required />
             &nbsp; &nbsp; &nbsp;
             <input type="button" class="btn btn-outline-success" value="Buscar" />
             &nbsp; &nbsp; &nbsp;

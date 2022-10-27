@@ -6,54 +6,9 @@
 }
 @if (ViewBag.mensaje != null)
 {
-
-    <h1>@ViewBag.mensaje</h1>
+<center><h1>@ViewBag.mensaje</h1></center>
+<br />
 }
-
-@*<center>
-    <b>
-        <font zize=20 color="back" face="calibri"> SISTEMA DE GESTION DE POSGRADOS</font>
-    </b>
-</center>*@
-
-@*<center>
-    <form method="post">
-        <br>
-        <br>
-        <div class="form-group">
-            <b>
-                <label for="usuariotxt">Usuario</label>
-            </b>
-
-            <br>
-            <input asp-for="NumeroDocumento" type="text" class="form-control col-sm-2" id="usuariotxt" required />
-            <br>
-            <br>
-        </div>
-
-        <div class="form-group">
-            <b><label for="passwordtxt">Contraseña</label></b>
-            <br>
-            <input asp-for="VcPassword" type="password" class="form-control col-sm-2" id="passwordtxt" required />
-            <br>
-            <br>
-        </div>
-
-        <a href="/Administrador/OlvidarContrasena" id="recuperarPass">¿Olvidaste la contraseña?</a>
-        <br>
-        <br>
-        <a href="/Administrador/CrearUsuario"><input id="ingresarbtn" type="button" value="Ingresar"></a>
-
-        <div class="form-check mb-2 mr-sm-2">
-            <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Recuerdame
-            </label>
-        </div>
-
-    </form>
-</center>*@
-
-
 
 <div id="page" class="container col-12 col-sm-12 col-md-5 card d-none d-lg-block ">
 
@@ -67,8 +22,7 @@
                 <div class="card-body">
                     <h3>SISTEMA DE GESTION DE POSGRADOS</h3>
                     <form class="signup-form" method="POST">
-                        @*role="form"*@
-                        @*<input type="hidden" name="logintoken" value="9t0TB5Gl2uFFUZgrVWcCxqnmO9Q2JtWD">*@
+                       
                         <label for="username">
                             Nombre de usuario
                         </label>

@@ -65,29 +65,25 @@ namespace SGPI.Controllers
                .Where(consulta => consulta.NumeroDocumento == numerodoc && consulta.VcPassword == password).FirstOrDefault();
             if (usuarioLogin != null)
             {
-
-
-
                 switch (usuarioLogin.Idrol)
                 {
                     case 1:
                         CrearUsuario();
                         return View("CrearUsuario");
-                       
+
                     case 2:
                         CoordinadorController Coordinador = new CoordinadorController();
                         Coordinador.BuscarCoordinador();
-                        return Redirect("Coordinador/BuscarCoordinador");
-                        
+                        return Redirect("/Coordinador/BuscarCoordinador");
+
 
                     case 3:
                         EstudianteController Estudiante = new EstudianteController();
                         Estudiante.Actualizar();
-                        return Redirect("Estudiante/Actualizar");
-                       
+                        return Redirect("/Estudiante/Actualizar");
+
                     default:
                         return View();
-                       
                 }
             }
             else
@@ -96,39 +92,60 @@ namespace SGPI.Controllers
 
             }
             return View();
-
-
-
         }
-        
 
-                public IActionResult OlvidarContrasena()
+
+        public IActionResult OlvidarContrasena()
         {
             return View();
         }
         public IActionResult CrearUsuario()
         {
+            ViewBag.TblPrograma = context.TblProgramas.ToList();
+            ViewBag.TblGenero = context.TblGeneros.ToList();
+            ViewBag.TblRol = context.TblRols.ToList();
+            ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
+
 
             return View();
         }
 
         public IActionResult BuscarUsuario()
         {
+
+            //TblUsuario usuario = new TblUsuario();
+            //string NumeroDocumento;
+            //usuario = context.TblUsuarios
+            //.Single(b => b.NumeroDocumento == "NumeroDocumento");
+
+            //List<TblUsuario> usuarios = new List<TblUsuario>();
+            //usuarios = context.TblUsuarios.ToList();
+
+
             return View();
         }
 
         public IActionResult EliminarUsuario()
         {
+            //var usuarioEliminar = context.TblUsuarios.Where(cursor => cursor.Idusuario == 1)
+            //.FirstOrDefault();
+            //context.TblUsuarios.Remove(usuarioEliminar);
             return View();
         }
 
         public IActionResult EditarUsuario()
         {
+            ViewBag.TblPrograma = context.TblProgramas.ToList();
+            ViewBag.TblGenero = context.TblGeneros.ToList();
+            ViewBag.TblRol = context.TblRols.ToList();
+            ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
+
             return View();
         }
 
         public IActionResult Reporte()
         {
+            
             return View();
         }
 

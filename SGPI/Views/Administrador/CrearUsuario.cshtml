@@ -1,10 +1,11 @@
 ﻿@model SGPI.Models.TblUsuario
 @{
     ViewData["Title"] = "CrearUsuario";
-
+    Layout = "_LayoutSGPI";
 }
 
-<h1>CREAR USUARIO</h1>
+
+
 
 <div class="container">
     <center>
@@ -42,15 +43,10 @@
     <br>
     <div class="row">
         <div class="col">
-
-            <select name="TIPO DE DOCUMENTO" id="DOUMENTO ENTIDAD">
-                <option value="r">DOUMENTO ENTIDAD</option>
-                <option value="r">CEDULA DE CIUDADANIA</option>
-                <option value="a">CEDULA EXTRANJERIA</option>
-                <option value="v">TARJETA DE ENTIDAD</option>
-                <option value="v">PASAPORTE</option>
-                <option value="v">NIT</option>
-            </select>
+            <b> <label for="Tipo Cedula">Tipo Cedula</label> </b>
+            @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"), 
+            new{@class="form-control dropdown"})
+         
         </div>
 
 
@@ -98,37 +94,29 @@
         <div class="row">
 
             <div class="col">
-              
+               <b> <label for="Genero">Genero</label> </b>
+                @Html.DropDownList("Idgenero", new SelectList(ViewBag.TblGenero, "Idgenero","Genero"),
+                new{@class="form-control dropdown"})
 
-        
-                <select name="GENERO" id="GENERO" style="margin-left:inherit">
-                    <option value="r">GENERO</option>
-                    <option value="r">MASCULINO</option>
-                    <option value="a">FEMENINO</option>
-                    <option value="v">OTRO </option>
-
-                </select>
+   
+            
                 
             </div>
 
 
             <div class="col">
-                <select name="ROL" id="ROL">
-                    <option value="r">ROL</option>
-                    <option value="r">ADMINISTRADOR</option>
-                    <option value="a">ESTUDIANTE</option>
-
-                </select>
+                <b> <label for="Rol">Rol</label></b>
+                @Html.DropDownList("IdRol", new SelectList(ViewBag.tblRol, "Idrol","Rol"),
+                new{@class="form-control dropdown"})
+                
             </div>
 
 
             <div class="col">
-                <select name="ESPECIALIDAD" id="ESPECIALIDAD">
-                    <option value="r">PROGRAMAS</option>
-                    <option value="r">ESPECIALIZACION SI </option>
-                    <option value="a">MAESTRIA EN MEDIO AMBIENTE</option>
-
-                </select>
+                <b> <label for="Programa">Programa</label> </b>
+                @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"),
+                new{@class="form-control dropdown"})
+              
             </div>
         </div>
 
