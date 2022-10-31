@@ -4,25 +4,22 @@
     ViewData["Title"] = "Login";
     Layout = "_LayoutSGPI";
 }
-@if (ViewBag.mensaje != null)
-{
-<center><h1>@ViewBag.mensaje</h1></center>
-<br />
-}
-
-<div id="page" class="container col-12 col-sm-12 col-md-5 card d-none d-lg-block ">
-
-    <div id="page-header" class="frontpage-guest-header">
 
 
-        <div class="row" id="loginbox">
+<form class="signup-form" method="POST">
+    <div id="page" class="container col-12 col-sm-12 col-md-5 card d-none d-lg-block ">
+
+        <div id="page-header" class="frontpage-guest-header">
 
 
-            <div id="boxForm">
-                <div class="card-body">
-                    <h3>SISTEMA DE GESTION DE POSGRADOS</h3>
-                    <form class="signup-form" method="POST">
-                       
+            <div class="row" id="loginbox">
+
+
+                <div id="boxForm">
+                    <div class="card-body">
+                        <h3>SISTEMA DE GESTION DE POSGRADOS</h3>
+
+
                         <label for="username">
                             Nombre de usuario
                         </label>
@@ -40,23 +37,26 @@
                         <div class="sign-up-btn">
                             <button type="submit" class="btn btn-primary">Ingresar</button>
                         </div>
-                    </form>
 
 
-                    <p><a href="/Administrador/OlvidarContrasena" id="recuperarPass">¿Olvidaste la contraseña?</a></p>
+
+                        <p><a href="/Administrador/OlvidarContrasena" id="recuperarPass">¿Olvidaste la contraseña?</a></p>
 
 
-                    <div class="form-check mb-2 mr-sm-2">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"> Recuerdame
-                        </label>
+                        <div class="form-check mb-2 mr-sm-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Recuerdame
+                            </label>
+                        </div>
                     </div>
-                </div>
-            </div><!-- end of .card-body -->
+                </div><!-- end of .card-body -->
+            </div> <!-- end of #boxForm -->
+        </div>
 
-
-        </div> <!-- end of #boxForm -->
     </div>
-
-</div>
-
+</form>
+@if (ViewBag.mensaje != null)
+{
+    <center><h1>@ViewBag.mensaje</h1></center>
+    <br />
+}

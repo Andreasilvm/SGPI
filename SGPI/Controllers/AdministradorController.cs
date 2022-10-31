@@ -88,7 +88,7 @@ namespace SGPI.Controllers
             }
             else
             {
-                return ViewBag.mensaje = "Usuario no existe o usuario/contraseña no no valida";
+                 ViewBag.mensaje = "Usuario no existe o usuario/contraseña no es valida";
 
             }
             return View();
@@ -175,4 +175,6 @@ namespace SGPI.Controllers
         }
 
     }
+    
+
 }
