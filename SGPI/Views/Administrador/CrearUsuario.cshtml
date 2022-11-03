@@ -129,13 +129,11 @@
                 <div class="input-group-addon"><i class="fa fa-lock add-on"></i></div>
                 <input asp-for="VcPassword" type="password" class="form-control" id="password" placeholder="Contraseña" required />
             </div>
-
-
             <br />
 
             @if (ViewBag.mensaje != null)
             {
-                <br />
+     
                 <h1>@ViewBag.mensaje</h1>
 
             }
