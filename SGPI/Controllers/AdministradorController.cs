@@ -88,7 +88,7 @@ namespace SGPI.Controllers
             }
             else
             {
-                 ViewBag.mensaje = "Usuario no existe o usuario/contraseña no es valida";
+                ViewBag.mensaje = "Usuario no existe o usuario/contraseña no es valida";
 
             }
             return View();
@@ -136,37 +136,61 @@ namespace SGPI.Controllers
 
         [HttpPost]
         public IActionResult BuscarUsuario(TblUsuario usuario)
-        {            
-            String numeroDoc =usuario.NumeroDocumento;
-            var user=context.TblUsuarios.
+        {
+            String numeroDoc = usuario.NumeroDocumento;
+            var user = context.TblUsuarios.
                 Where(consulta => consulta.NumeroDocumento == numeroDoc).FirstOrDefault();
-            if(user != null) {
+            if (user != null)
+            {
                 return View(user);
             }
             else
             {
                 return View();
             }
-                        
+
         }
 
-        public IActionResult EliminarUsuario()
+        public IActionResult EliminarUsuario(int? Idusuario)
         {
-            //var usuarioEliminar = context.TblUsuarios.Where(cursor => cursor.Idusuario == 1)
-            //.FirstOrDefault();
-            //context.TblUsuarios.Remove(usuarioEliminar);
+            TblUsuario user = context.TblUsuarios.Find(Idusuario);
+
+            if (user != null)
+            {
+                context.Remove(user);
+                context.SaveChanges();
+
+            }
             return View();
         }
 
-        public IActionResult EditarUsuario()
+        [HttpPost]
+        public IActionResult EditarUsuario(TblUsuario usuario)
         {
-            ViewBag.TblPrograma = context.TblProgramas.ToList();
-            ViewBag.TblGenero = context.TblGeneros.ToList();
-            ViewBag.TblRol = context.TblRols.ToList();
-            ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
-
-            return View();
+            context.Update(usuario);
+            context.SaveChanges();
+            return Redirect("/Administrador/BuscarUsuario");
         }
+
+        public IActionResult EditarUsuario(int? Idusuario)
+        {
+            TblUsuario usuarios = context.TblUsuarios.Find(Idusuario);
+
+            if (usuarios != null)
+            {
+                ViewBag.TblPrograma = context.TblProgramas.ToList();
+                ViewBag.TblGenero = context.TblGeneros.ToList();
+                ViewBag.TblRol = context.TblRols.ToList();
+                ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
+                return View(usuarios);
+            }
+            else
+            {
+                return Redirect("/Administrador/BuscarUsuario");
+            }
+          
+        }
+
 
         public IActionResult Reporte()
         {
@@ -175,6 +199,6 @@ namespace SGPI.Controllers
         }
 
     }
-    
+
 
 }

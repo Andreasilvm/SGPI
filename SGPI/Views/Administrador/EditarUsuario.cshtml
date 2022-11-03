@@ -40,81 +40,89 @@
 </div>
 
 <br>
-<div class="row">
-    <div class="col">
-        @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"),
-        new{@class="form-control dropdown"})
 
-    </div>
-
-
-
-</div>
 
 <br />
+
 
 <div class="container">
+    <form method="post">
+        <div class="row">
+        
 
-    <div class="row">
 
-        <div class="col">
-            <input asp-for="NumeroDocumento" type="text" class="form-control" id="Document" placeholder="NumeroDocumento">
+
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <input asp-for="NumeroDocumento" type="text" class="form-control" id="Document" placeholder="NumeroDocumento">
+            </div>
+
+            <div class="col">
+                <input asp-for="PrimerNombre" type="text" class="form-control" id="PRIMER_NOMBRE" placeholder="PrimerNombre">
+            </div>
+
+            <div class="col">
+                <input asp-for="SegundoNombre" type="text" class="form-control" id="Segundo_Nombre" placeholder="SegundoNombre">
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col">
+                <input asp-for="PrimerApellido" type="text" class="form-control" id="Primer_Apellido" placeholder="PrimerApellido">
+            </div>
+            <div class="col">
+                <input asp-for="SegundoApellido" type="text" class="form-control" id="SEGUNDO_APELLIDO" placeholder="SegundoApellido">
+            </div>
+            <div class="col">
+                <input asp-for="Email" type="text" class="form-control" id="Email" placeholder="Email">
+            </div>
+
         </div>
 
-        <div class="col">
-            <input asp-for="PrimerNombre" type="text" class="form-control" id="PRIMER_NOMBRE" placeholder="PrimerNombre">
-        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="container">
+            <div class="row">
+               
+                <div class="col">
+                    <b> <label for="Tipo Cedula">Tipo Cedula</label> </b>
+                    @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"),
+                    new{@class="form-control dropdown"})
+                </div>
 
-        <div class="col">
-            <input asp-for="SegundoNombre" type="text" class="form-control" id="Segundo_Nombre" placeholder="SegundoNombre">
-        </div>
-    </div>
-    <br />
-    <br />
-    <div class="row">
-        <div class="col">
-            <input asp-for="PrimerApellido" type="text" class="form-control" id="Primer_Apellido" placeholder="PrimerApellido">
-        </div>
-        <div class="col">
-            <input asp-for="SegundoApellido" type="text" class="form-control" id="SEGUNDO_APELLIDO" placeholder="SegundoApellido">
-        </div>
-        <div class="col">
-            <input asp-for="Email" type="text" class="form-control" id="Email" placeholder="Email">
-        </div>
+                <div class="col">
+                    @Html.DropDownList("Idgenero", new SelectList(ViewBag.TblGenero,"Idgenero","Genero"),
+                    new{@class="form-control dropdown"})
+                </div>
 
-    </div>
+
+                <div class="col">
+                    <b> <label for="Rol">Rol</label></b>
+                    @Html.DropDownList("IdRol", new SelectList(ViewBag.tblRol, "Idrol","Rol"),
+                    new{@class="form-control dropdown"})
+
+                </div>
+
+
+                <div class="col">
+                    @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"),
+                    new{@class="form-control dropdown"})
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <center> <input type="submit" id="btnCrear_Usuario" value="MODIFICAR USUARIO" class="btn btn-success" /></center>
+    </form>
 </div>
-<br />
-<br />
-<br />
-<br />
-<div class="container">
-    <div class="row">
-
-        <div class="col">
-            @Html.DropDownList("Idgenero", new SelectList(ViewBag.TblGenero,"Idgenero","Genero"),
-            new{@class="form-control dropdown"})
-        </div>
-
-
-        <div class="col">
-           @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"), 
-           new{@class="form-control dropdown"})
-        </div>
-
-
-        <div class="col">
-            @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"),
-            new{@class="form-control dropdown"})
-            
-        </div>
-    </div>
-
-
-
-</div>
-<br />
-<br />
-<br />
-<br />
-<center> <input type="button" id="btnCrear_Usuario" value="MODIFICAR USUARIO" class="btn btn-success" /></center>
