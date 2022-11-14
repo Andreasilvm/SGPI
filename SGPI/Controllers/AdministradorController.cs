@@ -79,8 +79,8 @@ namespace SGPI.Controllers
 
                     case 3:
                         EstudianteController Estudiante = new EstudianteController();
-                        Estudiante.Actualizar();
-                        return Redirect("/Estudiante/Actualizar");
+                        //Estudiante.Actualizar();
+                        return Redirect("/Estudiante/Actualizar/?idusuario="+usuarioLogin.Idusuario);
 
                     default:
                         return View();
@@ -167,6 +167,7 @@ namespace SGPI.Controllers
         [HttpPost]
         public IActionResult EditarUsuario(TblUsuario usuario)
         {
+           
             context.Update(usuario);
             context.SaveChanges();
             return Redirect("/Administrador/BuscarUsuario");

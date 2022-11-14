@@ -1,121 +1,142 @@
-﻿@{
+﻿@model SGPI.Models.TblUsuario
+
+@{
     ViewData["Title"] = "Actualizar";
+    Layout = "_LayoutSGPI";
 }
 
-<h1>Actualizar</h1>
+<h1>Estudiante Actualizar</h1>
 
 <center>
-    
-        <nav class="navbar navbar-expand-sm bg-success navbar-light ">
-            <b>
+     <p>
+    <nav class="navbar navbar-expand-sm bg-success navbar-light ">
+        <b>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/Estudiante/Actualizar">ACTUAlIZAR</a>
+                    <a class="nav-link" href="">ACTUAlIZAR</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
-
-
             </ul>
-            </b>
-        </nav>
+        </b>
+    </nav>
     <p>
-
 </center>
-
-<br />
-
+<br>
+<br>
 <div style="text-align:right">
     <a href="/Administrador/login" id="regresar">Cerrar sesion</a>
 </div>
 <br>
-<br>
-<div class="row">
-    <div class="col">
 
-        <select name="TIPO DE DOCUMENTO" id="DOUMENTO ENTIDAD">
-            <option value="r">DOUMENTO ENTIDAD</option>
-            <option value="r">CEDULA DE CIUDADANIA</option>
-            <option value="a">CEDULA EXTRANJERIA</option>
-            <option value="v">TARJETA DE ENTIDAD</option>
-            <option value="v">PASAPORTE</option>
-            <option value="v">NIT</option>
-        </select>
+<form method="post">
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col">
+                <b> <label for="Tipo Cedula">Tipo Cedula</label> </b>
+                @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"),
+                new{@class="form-control dropdown"})
+            </div>
+        </div>
+        <br />
+
+
+        <div class="row">
+            <div class="col">
+
+                <b> <label for="NumeroDocumento">Numero Documento</label> </b>
+                <input asp-for="NumeroDocumento" type="text" class="form-control col-sm-5" id="Document" placeholder="DOCUMENTO">
+            </div>
+            <br>
+            <div class="col">
+                <b> <label for="PrimerNombre">Primer Nombre</label> </b>
+                <input asp-for="PrimerNombre" type="text" class="form-control col-sm-5" id="PRIMER_NOMBRE" placeholder="PRIMER NOMBRE">
+            </div>
+            <br>
+            <div class="col">
+                <b> <label for="SegundoNombre">Segundo Nombre</label> </b>
+                <input asp-for="SegundoNombre" type="text" class="form-control col-sm-5" id="Segundo_Nombre" placeholder="SEGUNDO NOMBRE">
+
+                <br>
+            </div>
+            <br />
+            <br />
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <b> <label for="PrimerApellido">Primer Apellido</label> </b>
+                <input asp-for="PrimerApellido" type="text" class="form-control" id="Primer_Apellido" placeholder="PRIMER APELLIDO">
+            </div>
+            <br>
+            <div class="col">
+                <b> <label for="SegundoApellido">Segundo Apellido</label> </b>
+                <input asp-for="SegundoApellido" type="text" class="form-control col-sm-5" id="SEGUNDO_APELLIDO" placeholder="SEGUNDO APELLIDO">
+            </div>
+            <br>
+            <div class="col">
+                <b> <label for="Email">Email</label> </b>
+                <input asp-for="Email" type="text" class="form-control col-sm-10" id="email" placeholder="CORREO ELECTRONICO">
+            </div>
+
+        </div>
     </div>
 
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+                <b> <label for="Genero">Genero</label> </b>
+                @Html.DropDownList("Idgenero", new SelectList(ViewBag.TblGenero, "Idgenero","Genero"),
+                new{@class="form-control dropdown"})
+            </div>
 
 
-</div>
+            <div class="col">
+                <b> <label for="Programa">Programa</label> </b>
+                @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"),
+                new{@class="form-control dropdown"})
 
-<br />
+            </div>
+            <br>
+            <br>
 
-<div class="container">
-
-    <div class="row">
-
-        <div class="col">
-            <input type="text" class="form-control" id="Document" placeholder="DOCUMENTO" name="email">
         </div>
 
-        <div class="col">
-            <input type="text" class="form-control" id="PRIMER_NOMBRE" placeholder="PRIMER NOMBRE" name="email">
-        </div>
-
-        <div class="col">
-            <input type="text" class="form-control" id="Segundo_Nombre" placeholder="SEGUNDO NOMBRE" name="email">
-        </div>
+        <br />
     </div>
     <br />
     <br />
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" id="Primer_Apellido" placeholder="PRIMER APELLIDO" name="email">
+    <center>
+        <b><label for="password">Contraseña</label></b>
+        <div class="input-group-addon">
+            <input asp-for="VcPassword" type="password" class="form-control col-sm-5" id="password" placeholder="Contraseña" required />
         </div>
-        <div class="col">
-            <input type="text" class="form-control" id="SEGUNDO_APELLIDO" placeholder="SEGUNDO APELLIDO" name="email">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" id="email" placeholder="CORREO ELECTRONICO" name="email">
-        </div>
+    </center>
 
-    </div>
-</div>
-<br />
-<br />
-<br />
-<br />
-<div class="container">
-    <div class="row">
+    <br />
+    <br />
 
-        <div class="col">
-            <select name="GENERO" id="GENERO" style="margin-left:inherit">
-                <option value="r">GENERO</option>
-                <option value="r">MASCULINO</option>
-                <option value="a">FEMENINO</option>
-                <option value="v">OTRO </option>
+    @if (ViewBag.Estudiante != null)
+    {
 
-            </select>
-        </div>
+        <h1>@ViewBag.Estudiante</h1>
 
-        <div class="col">
-            <select name="ESPECIALIDAD" id="ESPECIALIDAD">
-                <option value="r">PROGRAMAS</option>
-                <option value="r">ESPECIALIZACION SI </option>
-                <option value="a">MAESTRIA EN MEDIO AMBIENTE</option>
+    }
+    <br>
+    <div>
+        <center> <button type="submit" id="btnCrear_Usuario" value="ACTUALIZAR USUARIO" class="btn btn-success"> ACTUALIZAR USUARIO </button> </center>
+        <br />
 
-            </select>
-        </div>
     </div>
 
 
+</form>
 
-</div>
-<br />
-<br />
-<br />
-<br />
-<div>
-<center> <input type="button" id="btnCrear_Usuario" value="ACTUALIZAR USUARIO" class="btn btn-success" /></center>
-<br />
-<center> <input type="button" id="btnCrear_Usuario" value="ENVIAR CERTIFICADO" class="btn btn-success" /></center>
-</div>
