@@ -1,0 +1,141 @@
+﻿@model SGPI.Models.TblUsuario
+
+@{
+    ViewData["Title"] = "Informe";
+    Layout = "_LayoutSGPI";
+}
+
+
+
+
+<center>
+
+        <nav class="navbar navbar-expand-sm bg-success navbar-light ">
+                <b>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/CrearUsuario">CREAR USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/BuscarUsuario">BUSCAR USUARIO</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/EliminarUsuario">ELIMINAR USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/EditarUsuario">MODIFICAR USUARIO</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/Reporte">REPORTE</a>
+                </li>
+            </ul>
+                </b>
+        </nav>
+</center>
+<br>
+<div style="text-align:right">
+    <a href="/Administrador/login" id="regresar">Cerrar sesion</a>
+</div>
+
+<br>
+
+<div class="tab-content">
+    <form>
+        <div class="row">
+            <div class="col">
+            @*    @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"), 
+                new{@class="form-control dropdown"})*@
+               
+            </div>
+        </div>
+
+
+        <br>
+
+
+        <div class="input-group">
+            <br>
+            <input asp-for="NumeroDocumento" type="text" placeholder="NumeroDocumento" id="busquedatxt" class="form-control" required />
+            &nbsp; &nbsp; &nbsp;
+            <input type="button" class="btn btn-outline-success" value="Buscar" />
+            &nbsp; &nbsp; &nbsp;
+
+        </div>
+
+
+
+        <br />
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>PRIMER NOMBRE</th>
+                    <th>SEGUNDO NOMBRE</th>
+                    <th>PRIMER APELLIDO</th>
+                    <th>SEGUNDO APELLIDO</th>
+                    <th>GENERO</th>
+                    <th>DOCUMENTO</th>
+                    <th>PROGRAMA</th>
+                    <th>ROL</th>
+                    <th>CORREO </th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr>
+                    <td>Yuli</td>
+                    <td>Andrea</td>
+                    <td>Silva</td>
+                    <td>Muñoz</td>
+                    <td>Femenina</td>
+                    <td>1035581599</td>
+                    <td>Tecnologia</td>
+                    <td>Estudiante</td>
+                    <td>yuli.silva@correo.tdea.edu.com</td>
+                </tr>
+
+                <tr>
+                    <td>- </td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+
+                <tr>
+                    <td>- </td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+
+                <tr>
+                    <td>- </td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<br />
+<br>

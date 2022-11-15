@@ -1,0 +1,128 @@
+﻿@model SGPI.Models.TblUsuario
+@{
+    ViewData["Title"] = "EditarUsuario";
+    Layout = "_LayoutSGPI";
+}
+
+
+
+
+<center>
+    <p>
+        <nav class="navbar navbar-expand-sm bg-success navbar-light ">
+            <b>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Administrador/CrearUsuario">CREAR USUARIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Administrador/BuscarUsuario">BUSCAR USUARIO</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Administrador/EliminarUsuario">ELIMINAR USUARIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Administrador/EditarUsuario">MODIFICAR USUARIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Administrador/Reporte">REPORTE</a>
+                    </li>
+                </ul>
+            </b>
+
+        </nav>
+</center>
+
+<div style="text-align:right">
+    <a href="/Administrador/login" id="regresar">Cerrar sesion</a>
+</div>
+
+<br>
+
+
+<br />
+
+
+<div class="container">
+    <form method="post">
+        <div class="row">
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <input asp-for="NumeroDocumento" type="text" class="form-control" id="Document" placeholder="NumeroDocumento">
+            </div>
+
+            <div class="col">
+                <input asp-for="PrimerNombre" type="text" class="form-control" id="PRIMER_NOMBRE" placeholder="PrimerNombre">
+            </div>
+
+            <div class="col">
+                <input asp-for="SegundoNombre" type="text" class="form-control" id="Segundo_Nombre" placeholder="SegundoNombre">
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col">
+                <input asp-for="PrimerApellido" type="text" class="form-control" id="Primer_Apellido" placeholder="PrimerApellido">
+            </div>
+            <div class="col">
+                <input asp-for="SegundoApellido" type="text" class="form-control" id="SEGUNDO_APELLIDO" placeholder="SegundoApellido">
+            </div>
+            <div class="col">
+                <input asp-for="Email" type="text" class="form-control" id="Email" placeholder="Email">
+            </div>
+        </div>
+        <br>
+        <label for="password">Contraseña</label>
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-lock add-on"></i></div>
+            <input asp-for="VcPassword" type="password" class="form-control col-sm-5" id="password" placeholder="Contraseña" required />
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="container">
+            <div class="row">
+
+                <div class="col">
+                    <b> <label for="Tipo Cedula">Tipo Cedula</label> </b>
+                    @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"),
+                    new{@class="form-control dropdown"})
+                </div>
+
+                <div class="col">
+                    @Html.DropDownList("Idgenero", new SelectList(ViewBag.TblGenero,"Idgenero","Genero"),
+                    new{@class="form-control dropdown"})
+                </div>
+
+
+                <div class="col">
+                    <b> <label for="Rol">Rol</label></b>
+                    @Html.DropDownList("IdRol", new SelectList(ViewBag.tblRol, "Idrol","Rol"),
+                    new{@class="form-control dropdown"})
+
+                </div>
+
+
+                <div class="col">
+                    @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"),
+                    new{@class="form-control dropdown"})
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <center> <input type="submit" id="btnCrear_Usuario" value="MODIFICAR USUARIO" class="btn btn-success" /></center>
+    </form>
+</div>

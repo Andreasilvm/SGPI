@@ -1,35 +1,34 @@
 ﻿@model SGPI.Models.TblPago
 @{
-    ViewData["Title"] = "Pagos";
+    ViewData["Title"] = "EditarUsuario";
     Layout = "_LayoutSGPI";
 }
 
 <h1>Pagos</h1>
+
+<center>
+    <p>
+        <nav class="navbar navbar-expand-sm bg-success navbar-light ">
+            <b>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:history.back()">ACTUALIZAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
+
+
+                </ul>
+        </nav>
+    <p>
+
+</center>
+
+<div style="text-align:right">
+    <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
+</div>
+<br>
 <form method="post">
-    <center>
-        <p>
-            <nav class="navbar navbar-expand-sm bg-success navbar-light ">
-                <b>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            @Html.ActionLink("Actializar", "Actualizar",
-                            new {IdUsuario = ViewBag.Idusuario})
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Pagos","Pagos",
-                            new {IdUsuario = ViewBag.Idusuario})
-
-                    </ul>
-            </nav>
-        <p>
-
-    </center>
-
-    <div style="text-align:right">
-        <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
-    </div>
-    <br>
-
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -53,10 +52,10 @@
     </table>
     <br>
     <br>
-    @if (ViewBag.mensaje != null)
+    @if (ViewBag.Pagos != null)
     {
 
-        <h1>@ViewBag.mensaje</h1>
+        <h1>@ViewBag.Pagos</h1>
 
     }
     <br>
